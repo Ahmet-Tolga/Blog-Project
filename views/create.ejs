@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-padding bg-dark p-4" style="box-shadow: 3px 7px rgba(0, 0, 0, 0.4);">
+        <a href="" class="navbar-brand text-muted">Blog<span class="text-white">Site</span></a>
+        <div class="row p-3" style="display: flex;justify-content: space-between;">
+            <% if (control) { %>
+                <a href="/" class="col-md-3 text-white" style="text-decoration: none;">Home</a>
+            <% } %>
+            <% if (!control) { %>
+                <a href="/home/<%= user %>" class="col-md-3 text-white" style="text-decoration: none;">Home</a>
+            <% } %>
+            <% if (!control) { %>
+                <a href="/create/<%= user %>" class="col-md-3 text-white" style="text-decoration: none;">Create</a>
+            <% } %>
+            <% if (control) { %>
+                <div style="display: flex;flex-direction: column;" class="col-md-3">
+                    <a href="/signin"  style="text-decoration: none;" class="text-white">Signin</a>
+                    <span class="bg-primary" style="width: 45px;height: 3px;"></span>
+                </div>
+                <div style="display: flex;flex-direction: column;" class="col-md-3">
+                    <a href="/signup"  style="text-decoration: none;" class="text-white">Signup</a>
+                    <span class="bg-primary" style="width: 45px;height: 3px;"></span>
+                </div>
+            <% } %>
+            <% if (!control) { %>
+                <div style="display: flex;flex-direction: column;" class="col-md-3">
+                <a href="/"  style="text-decoration: none;" class="text-white">Logout</a>
+            </div>
+            <% } %>
+        </div>
+    </nav>
+    <div class="container">
+        <form action="/create" method="post" enctype="multipart/form-data">
+        <div class="row" style="margin-left: auto;margin-right: auto;width: 70%;height: 500px;">
+            <div class="panel panel-padding p-4 mt-4" style="border: 1px solid black;border-radius: 20px;">
+                <div class="panel-heading">
+                    <h2>Create a new Blog</h2>
+                </div>
+                <div class="panel-body" style="display: flex;flex-direction: column;justify-content: space-around;height: 70%;width: 70%;">
+                    <div class="form-group">
+                        <label for="name">Choose an image</label>
+                        <input type="file" name="image" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Enter a title:</label>
+                        <input type="text" name="title" placeholder="Title..." class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Enter a Description:</label>
+                        <input type="text" name="description" placeholder="Description..." width="200" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-info">Create+</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    </div>
+</body>
+<script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</html>
