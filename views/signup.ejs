@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-4">
+            <form action="/signup" method="post">
+                <div class="panel panel-2"
+                    style="margin-left: auto;margin-right: auto;border: 1px solid black;border-radius: 20px;box-shadow: 1px 3px rgba(0, 0, 0, 0.4);">
+                    <div class="panel-heading p-4"><h2>Signup page</h2></div>
+                    <span class="p-3" style="color: red;">
+                        <%= message %>
+                    </span>
+                    <div class="panel-body m-3"
+                        style="display: flex;justify-content: space-around;flex-direction: column;height: 70%;">
+                        <div class="form-group">
+                            <label for="name">Username</label>
+                            <input type="text" class="form-control" placeholder="Enter your name..." name="username">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">password</label>
+                            <input type="password" class="form-control" placeholder="Enter your password..."
+                                name="password">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">password Again</label>
+                            <input type="password" class="form-control" placeholder="Enter your password again..."
+                                name="password_again">
+                        </div>
+                        <button type="submit" class="btn btn-primary text-white">Sign up</button>
+                    </div>
+                    <p style="margin: auto;" class="p-4">
+                        <label for="" class="p-2">Have a account</label>
+                        <a href="/signin" class="text-primary" style="text-decoration: none;">Sign in</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
